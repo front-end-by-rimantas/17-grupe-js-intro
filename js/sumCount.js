@@ -10,45 +10,45 @@
 // -70 - 30     ->  nedidelis neigiamas
 
 
-function sumCount( from, untill ) {
+function sumCount( from, until ) {
     // validacija
     if ( from === undefined ) {
         return 'ERROR: neduotas pirmas skaicius';
     }
-    if ( untill === undefined ) {
+    if ( until === undefined ) {
         return 'ERROR: neduotas antrasis skaicius';
     }
     if ( typeof from !== "number" ) {
         return 'ERROR: pirmasis ne skaicius';
     }
-    if ( typeof untill !== "number" ) {
+    if ( typeof until !== "number" ) {
         return 'ERROR: antrasis ne skaicius';
     }
     if ( isFinite(from) === false ) {
         return 'ERROR: pirmas turi buti normalus skaicius';
     }
-    if ( isFinite(untill) === false ) {
+    if ( isFinite(until) === false ) {
         return 'ERROR: antras turi buti normalus skaicius';
     }
-    if ( from > untill ) {
+    if ( from > until ) {
         return 'ERROR: pirmas negali buti didesnis uz antra';
     }
     if ( from % 1 !== 0 ) {
         return 'ERROR: pirmas turi buti sveikas skaicius';
     }
-    if ( untill % 1 !== 0 ) {
+    if ( until % 1 !== 0 ) {
         return 'ERROR: antras turi buti sveikas skaicius';
     }
 
     // logika
     let sum = 0;
 
-    for ( let i=from; i<=untill; i++ ) {
+    for ( let i=from; i<=until; i++ ) {
         sum += i;
     }
 
     // vienas is daliu reikalinga perrasyti naudojant formule
-    // 1) sum = ( (untill - from) * (untill - from + 1) ) / 2;
+    // 1) sum = ( (until - from) * (until - from + 1) ) / 2;
 
     // graziname rezultata
     return sum;
